@@ -15,5 +15,13 @@ class Alumno extends Model
     {
         return $this->hasMany(Nota::class);
     }
+    public function asignaturas()
+    {
+        return $this->belongsToMany(Asignatura::class);
+    }
+    public function perfil()
+    {
+        return $this->hasOne(Perfil::class, 'usuario_id');
+    }
 }
 
